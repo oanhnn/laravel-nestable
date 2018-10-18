@@ -989,13 +989,15 @@ trait Nestable
         }
         if (!in_array($position, ['child', 'left', 'right'])) {
             throw new Exception(sprintf(
-                'Position should be either child, left, right. Supplied position is "%s".', $position
+                'Position should be either child, left, right. Supplied position is "%s".',
+                $position
             ));
         }
         if ($target === null) {
             if ($position == 'left' || $position == 'right') {
                 throw new Exception(sprintf(
-                    'Cannot resolve target node. This node cannot move any further to the %s.', $position
+                    'Cannot resolve target node. This node cannot move any further to the %s.',
+                    $position
                 ));
             }
             throw new Exception('Cannot resolve target node.');
